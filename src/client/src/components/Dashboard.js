@@ -3,7 +3,8 @@ import Modal from 'react-modal';
 import Tasks from './Tasks';
 import AddTask from './AddTask';
 import close from '../images/close.png';
-const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
+//const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
+const apiEndpoint = "https://fa-todo-backend-baqmes.azurewebsites.net"
 
 export default class Dashboard extends Component {
     
