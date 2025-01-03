@@ -3,8 +3,9 @@ import Modal from 'react-modal';
 import Tasks from './Tasks';
 import AddTask from './AddTask';
 import close from '../images/close.png';
-
+const apiEndpoint = process.env.REACT_APP_API_ENDPOINT;
 export default class Dashboard extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -51,7 +52,7 @@ export default class Dashboard extends Component {
     async saveTask(task) {
         var res = null;
         if (task !== null && task.id > 0) {
-            res = await fetch('/api/tasks',{
+            res = await fetch(`${apiEndpoint}/api/tasks`,{
                 method: 'PUT',
                 body: JSON.stringify(task),
                 headers: {"Content-Type": "application/json"}
@@ -61,7 +62,7 @@ export default class Dashboard extends Component {
             }
         }
         else {
-            res = await fetch('/api/tasks',{
+            res = await fetch(`${apiEndpoint}/api/tasks`,{
                 method: 'POST',
                 body: JSON.stringify(task),
                 headers: {"Content-Type": "application/json"}
@@ -77,7 +78,7 @@ export default class Dashboard extends Component {
     }
 
     async deleteTask(id) {
-        var res = await fetch('/api/tasks?id=' + id,{
+        var res = await fetch(`${apiEndpoint}/api/tasks?id=` + id,{
                 method: 'DELETE',
                 headers: {"Content-Type": "application/json"}
             });
@@ -91,7 +92,7 @@ export default class Dashboard extends Component {
     }
 
     async getTasks() {
-        const response = await fetch('/api/tasks');
+        const response = await fetch(`${apiEndpoint}/api/tasks`);
         const body = await response.json();
         if (response.status !== 200) {
             throw Error(body.message) 
