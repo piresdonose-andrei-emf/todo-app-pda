@@ -59,14 +59,14 @@ app.http('tasks', {
             if (request.method === 'PUT') {
                 context.log('Handling PUT /tasks');
                 const body = await request.json();
-                const { id, description } = body;
+                const { id, description, completed } = body;
 
                 if (!id || !description) {
                     return { status: 400, body: 'Task ID and description are required' };
                 }
 
                 await connection.execute(
-                    'UPDATE todo.tasks SET description = ? WHERE id = ?',
+                    'UPDATE todo.tasks SET description = ?, completed = ?  WHERE id = ?',
                     [description, id]
                 );
                 return { status: 200, body: `Task with ID ${id} updated` };
