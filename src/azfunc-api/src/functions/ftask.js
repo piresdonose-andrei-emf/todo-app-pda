@@ -67,7 +67,7 @@ app.http('tasks', {
 
                 await connection.execute(
                     'UPDATE todo.tasks SET description = ?, completed = ?  WHERE id = ?',
-                    [description, id]
+                    [description, completed, id]
                 );
                 return { status: 200, body: `Task with ID ${id} updated` };
             }

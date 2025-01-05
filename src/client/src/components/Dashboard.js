@@ -46,6 +46,7 @@ export default class Dashboard extends Component {
         this.toggleAddTaskModal();
         var task = {
             description: description
+           
         };
         await this.saveTask(task);
         await this.loadTasks();
