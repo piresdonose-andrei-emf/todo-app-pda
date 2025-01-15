@@ -1,3 +1,0 @@
-[submodule "src/client"]
-	path = src/client
-	url = https://github.com/mariadb-developers/todo-app-client.git
