@@ -1,4 +1,4 @@
-const apiEndpoint = "http://backend-210-300621-andrei-pires.ashymushroom-954a91f7.northeurope.azurecontainerapps.io/api/tasks";
+const apiEndpoint = "https://backend-210-300621-andrei-pires.ashymushroom-954a91f7.northeurope.azurecontainerapps.io/api/tasks";
 
 $(document).ready(function () {
   // Charger les tâches au démarrage
