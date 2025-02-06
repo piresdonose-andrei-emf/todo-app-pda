@@ -5,6 +5,7 @@ const path = require('path');
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+
 app.use(cors());
 
 const tasksRoutes = require("./routes/tasksRoutes");
