@@ -45,11 +45,11 @@ jobs:
 
       - name: Lighthouse CI Action
         uses: treosh/lighthouse-ci-action@v12
-          with:
-            urls: |
-              https://azure.andreipiresdonose.emf-informatique.ch/
-            uploadArtifacts: false
-            temporaryPublicStorage: true
+        with:
+          urls: |
+            https://azure.andreipiresdonose.emf-informatique.ch/
+          uploadArtifacts: false
+          temporaryPublicStorage: true
 
 
   close_pull_request_job:
