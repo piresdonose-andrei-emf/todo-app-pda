@@ -2,7 +2,7 @@
     "ci": {
       "assert": {
         "assertions": {
-          "first-contentful-paint": ["error", { "minScore": 70.5 }]
+          "performance": ["error", { "minScore": 0.9 }]
         }
       }
     }
