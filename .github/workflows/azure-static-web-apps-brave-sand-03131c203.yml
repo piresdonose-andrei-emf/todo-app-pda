@@ -19,8 +19,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Lighthouse CI Action
-        uses: treosh/lighthouse-ci-action@v12
 
       - name: Vérifier l'existence de index.html
         run: |
@@ -44,6 +42,15 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "." # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+
+      - name: Lighthouse CI Action
+        uses: treosh/lighthouse-ci-action@v12
+          with:
+            urls: |
+              https://azure.andreipiresdonose.emf-informatique.ch/
+            uploadArtifacts: false
+            temporaryPublicStorage: true
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
