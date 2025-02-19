@@ -50,6 +50,7 @@ jobs:
             https://azure.andreipiresdonose.emf-informatique.ch/
           uploadArtifacts: false
           temporaryPublicStorage: true
+          configPath: './lighthouserc.json'
 
 
   close_pull_request_job:
