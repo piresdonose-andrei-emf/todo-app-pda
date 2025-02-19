@@ -19,6 +19,8 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Lighthouse CI Action
+        uses: treosh/lighthouse-ci-action@v12
 
       - name: Vérifier l'existence de index.html
         run: |
@@ -29,7 +31,6 @@ jobs:
             exit 1
           fi
 
-          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
