@@ -1,5 +1,5 @@
 name: Build and save my Docker image to a registry
-# 
+
 on:
   push:
     branches:
