@@ -3,9 +3,9 @@ name: Build and save my Docker image to a registry
 on:
   push:
     branches:
-      - main # Déclenchement lorsque le code est poussé sur main
+      - main  # Déclenchement lorsque le code est poussé sur main
     paths:
-      - "src/backend/**" # Se déclenche uniquement si des fichiers dans 'src/backend' sont modifiés
+      - 'src/backend/**'  # Se déclenche uniquement si des fichiers dans 'src/backend' sont modifiés
 
 env:
   REG_NAME: "exo.container-registry.com" # Nom du registre sans "azurecr.io"
@@ -19,7 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      #ajouter les étapes pour build votre image docker et la pousser sur la registry donnée
       - name: connection à la repository
         run: |
           docker login -u quentin.badoud@edufr.ch -p ${{ secrets.DOCKER_PASSWORD }} $REG_NAME
