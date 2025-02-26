@@ -1,20 +1,20 @@
-# Utiliser une image Node.js officielle comme image de base
+# Use an official Node.js image as a base
 FROM node:16
 
-# Définir le répertoire de travail à l'intérieur du conteneur
+# Set the working directory inside the container
 WORKDIR /usr/src/app
 
-# Copier le fichier package.json et package-lock.json depuis le bon chemin
+# Copy the package.json and package-lock.json from src/backend
 COPY src/backend/package*.json ./
 
-# Installer les dépendances de l'application
+# Install dependencies
 RUN npm install
 
-# Copier le reste des fichiers de l'application dans le conteneur
-COPY src/backend ./
+# Copy the rest of the application files from src/backend
+COPY src/backend/ ./
 
-# Exposer le port utilisé par l'application
+# Expose the port the app will run on
 EXPOSE 8080
 
-# Démarrer l'application
+# Start the application
 CMD [ "npm", "start" ]
