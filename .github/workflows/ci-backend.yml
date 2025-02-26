@@ -26,7 +26,7 @@ jobs:
       - name: build docker image
         run: |
           cd src/backend
-          docker build -t ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }} .
+          docker build -t ${{ env.REG_NAME }}/c213-emf/${{ env.IMAGE_NAME }} ./src/backend
 
       - name: tag docker image
         run: |
